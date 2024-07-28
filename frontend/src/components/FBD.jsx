@@ -20,7 +20,7 @@ const FeedbackForm = () => {
 
   const handleNextStep = () => {
     // const response = await axios.get(
-    //   "http://localhost/8000/api/forms"
+    //   "http://localhost:8000/api/forms"
     // );
     // // console.log("Form response", response);
 
@@ -63,7 +63,7 @@ const FeedbackForm = () => {
 
   //     try {
   //       const response = await axios.post(
-  //         "http://localhost/8000/api/submit",
+  //         "http://localhost:8000/api/submit",
   //         fromData
   //       );
   //       // console.log(response);

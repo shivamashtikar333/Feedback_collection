@@ -37,30 +37,30 @@ const Profile = ({ adminData }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put("http://localhost/8000/admin/updatePassword",editData, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+      const response = await axios.put(
+        "http://localhost:8000/admin/updatePassword",
+        editData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
-      })
-     
+      );
+
       toast.success("Password updated successfully");
 
       console.log("Password updated", response);
-  
 
       setEditData({
         oldPassword: "",
         newPassword: "",
         confirmPassword: "",
       });
-
     } catch (error) {
       console.error("Error updating password", error);
       toast.error("Error updating password");
     }
-
-  }
-
+  };
 
   return loading ? (
     <Spinner />

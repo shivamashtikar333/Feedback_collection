@@ -10,9 +10,7 @@ const Notification = () => {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost/8000/api/forms"
-      );
+      const response = await axios.get("http://localhost:8000/api/forms");
       //   console.log("Notification data", response.data.forms[0].createdAt);
       const { forms } = response.data;
       setUserData(forms);

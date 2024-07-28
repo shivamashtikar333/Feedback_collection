@@ -19,19 +19,19 @@ const FeedbackForm = () => {
   // console.log(fromData);
 
   const handleNextStep = async () => {
-    const response = await axios.get(
-      "http://localhost/8000/api/forms"
-    );
+    const response = await axios.get("http://localhost:8000/api/forms");
     // console.log("Form response", response);
 
     if (step == 1) {
-      const emailExists = response.data.forms.some(form => form.email === fromData.email);
+      const emailExists = response.data.forms.some(
+        (form) => form.email === fromData.email
+      );
       if (emailExists) {
         console.log("Email exists");
         toast.error("You have already submitted feedback with this email.");
         return;
       }
-  
+
       if (!fromData.name || !fromData.email) {
         toast.error("All fields are Mandatory");
         return;
@@ -63,7 +63,7 @@ const FeedbackForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost/8000/api/submit",
+        "http://localhost:8000/api/submit",
         fromData
       );
       // console.log(response);

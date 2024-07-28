@@ -18,9 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAdminData = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost/8000/auth/admins"
-        );
+        const response = await axios.get("http://localhost:8000/auth/admins");
         // console.log("Response", response.data);
         const { adminData } = response.data;
 
@@ -118,7 +116,7 @@ const Dashboard = () => {
       <div className="w-4/5 bg-blue-gray-50 bg-blue-100 p-4 ">
         {currentPage === "Home" && <Home />}
         {currentPage === "Profile" && <Profile adminData={adminData} />}
-        {currentPage === 'CreateForm' && <CreateForm />}
+        {currentPage === "CreateForm" && <CreateForm />}
       </div>
     </div>
   );
